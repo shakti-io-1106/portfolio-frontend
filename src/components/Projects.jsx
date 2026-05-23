@@ -61,7 +61,7 @@ function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white/5 border border-white/10 group rounded-3xl overflow-hidden hover:border-cyan-400 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]"
+                            className="transform-gpu bg-white/5 border border-white/10 group rounded-3xl overflow-hidden hover:border-cyan-400 transition duration-300 hover:-translate-y-2 hover:scale-[1.02]"
                         >
 
                             {/* Image Placeholder */}
@@ -104,17 +104,26 @@ function Projects() {
                                 </div>
 
                                 {/* Buttons */}
-                                <div className="flex gap-4 pt-4">
-
-                                    <button className="bg-cyan-400 text-black px-5 py-2 rounded-full font-semibold hover:scale-105 transition duration-300">
+                                <div className="flex gap-4 pt-4 relative z-20">
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative z-30 inline-block bg-cyan-400 text-black px-5 py-2 rounded-full font-semibold hover:scale-105 transition duration-300 cursor-pointer"
+                                    >
                                         Live Demo
-                                    </button>
+                                    </a>
 
-                                    <button className="border border-white/20 px-5 py-2 rounded-full hover:bg-white hover:text-black transition duration-300">
-                                        GitHub
-                                    </button>
-
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="relative z-30 inline-block border border-white/20 px-5 py-2 rounded-full hover:bg-white hover:text-black transition duration-300 cursor-pointer"
+                                    >
+                                        Github Repo
+                                    </a>
                                 </div>
+
 
                             </div>
                         </motion.div>
